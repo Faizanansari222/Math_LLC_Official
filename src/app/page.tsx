@@ -1,5 +1,4 @@
 // components
-import { Navbar, Footer } from "@/components";
 
 // sections
 import Hero from "./hero";
@@ -9,11 +8,11 @@ import MobileConvenience from "./mobile-convenience";
 import Testimonials from "./testimonials";
 import Faqs from "./faqs";
 import ClientClouser from "@/components/clientClouser";
+import FooterTwo from "@/components/footerTwo";
 
 export default function Campaign() {
   return (
     <>
-      <Navbar />
       <Hero />
       {/* <VideoIntro /> */}
       <Feature />
@@ -21,7 +20,6 @@ export default function Campaign() {
       <Testimonials />
       <ClientClouser/>
       <Faqs />
-      <Footer />
     </>
   );
 }

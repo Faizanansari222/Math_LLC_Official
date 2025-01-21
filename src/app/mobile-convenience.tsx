@@ -15,7 +15,7 @@ const OPTIONS = [
     description: "Projects Completed",
   },
   {
-    title: "10",
+    title: "08+",
     description: "Years of Experience",
   },
   {

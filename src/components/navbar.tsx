@@ -19,7 +19,6 @@ function NavItem({ children, href }: NavItemProps) {
       <Typography
         as="a"
         href={href || "#"}
-        target={href ? "_blank" : "_self"}
         variant="small"
         className="font-medium"
         placeholder=""
@@ -76,21 +75,25 @@ export function Navbar() {
         <Typography
           as="a"
           href="https://www.material-tailwind.com"
-          target="_blank"
           variant="h6"
           color={isScrolling ? "gray" : "white"}
         >
           <div className={``}>
-            {
-isScrolling ? <Image
-          width={150}
-          height={150}
-            src={require("../assets/Math LLC main logo 1@300x-8.png")} alt={""}          />: <Image
-          width={150}
-          height={150}
-          src={require("../assets/Math-LLC-WHT@300x-8.png")} alt={""}          />
-            }
-
+            {isScrolling ? (
+              <Image
+                width={150}
+                height={150}
+                src={require("../assets/Math LLC main logo 1@300x-8.png")}
+                alt={""}
+              />
+            ) : (
+              <Image
+                width={150}
+                height={150}
+                src={require("../assets/Math-LLC-WHT@300x-8.png")}
+                alt={""}
+              />
+            )}
           </div>
         </Typography>
         <ul
@@ -98,38 +101,101 @@ isScrolling ? <Image
             isScrolling ? "text-[#103c6e]" : "text-white"
           }`}
         >
-          <NavItem>Home</NavItem>
-          <NavItem>About Us</NavItem>
-          <NavItem>Contact Us</NavItem>
-          <NavItem href="https://www.material-tailwind.com/docs/react/installation">
-            Docs
-          </NavItem>
+          <NavItem href="/">Home</NavItem>
+          <NavItem href="/about">About Us</NavItem>
+          <NavItem href="/services">Services</NavItem>
+          <NavItem href="/contact">Contact Us</NavItem>
         </ul>
         <div className="hidden gap-2 lg:flex lg:items-center">
           <IconButton
             variant="text"
-            className={isScrolling ? "text-[#3ab4e4]" : "text-white"}
+            className={isScrolling ? "text-[#3ab4e4] hover:bg-white" : "text-white"}
             size="sm"
           >
-            <i className="fa-brands fa-twitter text-base" />
+            <i className="fa-brands fa-linkedin text-base" />
           </IconButton>
           <IconButton
             variant="text"
-            className={isScrolling ? "text-[#3ab4e4]" : "text-white"}
+            className={isScrolling ? "text-[#3ab4e4] hover:bg-white" : "text-white"}
             size="sm"
           >
             <i className="fa-brands fa-facebook text-base" />
           </IconButton>
           <IconButton
             variant="text"
-            className={isScrolling ? "text-[#3ab4e4]" : "text-white"}
+            className={isScrolling ? "text-[#3ab4e4] hover:bg-white "  : "text-white"}
             size="sm"
           >
             <i className="fa-brands fa-instagram text-base" />
           </IconButton>
-          <a  href="https://www.material-tailwind.com/blocks" target="_blank">
-            <Button  className={isScrolling ? "bg-[#b3201d] flex items-center gap-2 justify-center" : "bg-white text-[#103c6e] flex items-center gap-2 justify-center"} size="sm">
-              Profile <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path fill="currentColor" fill-opacity="0" stroke-dasharray="20" stroke-dashoffset="20" d="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"><animate attributeName="d" begin="0.5s" dur="1.5s" repeatCount="indefinite" values="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5;M12 4h2v3h2.5l-4.5 4.5M12 4h-2v3h-2.5l4.5 4.5;M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"/><animate fill="freeze" attributeName="fill-opacity" begin="0.7s" dur="0.5s" values="0;1"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"/></path><path stroke-dasharray="14" stroke-dashoffset="14" d="M6 19h12"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="14;0"/></path></g></svg></span>
+          <a href="#">
+            <Button
+              className={
+                isScrolling
+                  ? "bg-[#b3201d] flex items-center gap-2 justify-center"
+                  : "bg-white text-[#103c6e] flex items-center gap-2 justify-center"
+              }
+              size="sm"
+            >
+              Profile{" "}
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-opacity="0"
+                      stroke-dasharray="20"
+                      stroke-dashoffset="20"
+                      d="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"
+                    >
+                      <animate
+                        attributeName="d"
+                        begin="0.5s"
+                        dur="1.5s"
+                        repeatCount="indefinite"
+                        values="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5;M12 4h2v3h2.5l-4.5 4.5M12 4h-2v3h-2.5l4.5 4.5;M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"
+                      />
+                      <animate
+                        fill="freeze"
+                        attributeName="fill-opacity"
+                        begin="0.7s"
+                        dur="0.5s"
+                        values="0;1"
+                      />
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.4s"
+                        values="20;0"
+                      />
+                    </path>
+                    <path
+                      stroke-dasharray="14"
+                      stroke-dashoffset="14"
+                      d="M6 19h12"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.5s"
+                        dur="0.2s"
+                        values="14;0"
+                      />
+                    </path>
+                  </g>
+                </svg>
+              </span>
             </Button>
           </a>
         </div>
@@ -151,9 +217,9 @@ isScrolling ? <Image
           <ul className="flex flex-col gap-4 text-[#103c6e]">
             <NavItem>Home</NavItem>
             <NavItem>About Us</NavItem>
-            <NavItem>Contact Us</NavItem>
+            <NavItem>Services</NavItem>
             <NavItem href="https://www.material-tailwind.com/docs/react/installation">
-              Docs
+              Contact Us
             </NavItem>
           </ul>
           <div className="mt-4 flex items-center gap-2">
@@ -166,10 +232,75 @@ isScrolling ? <Image
             <IconButton variant="text" color="gray" size="sm">
               <i className="fa-brands fa-instagram text-base text-[#39b3e3]" />
             </IconButton>
-            <a href="https://www.material-tailwind.com/blocks" target="_blank">
-            <Button  className={isScrolling ? "bg-[#b3201d] flex items-center gap-2 justify-center" : "bg-[#b3201d] text-white flex items-center gap-2 justify-center"} size="sm">
-              Profile <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path fill="currentColor" fill-opacity="0" stroke-dasharray="20" stroke-dashoffset="20" d="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"><animate attributeName="d" begin="0.5s" dur="1.5s" repeatCount="indefinite" values="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5;M12 4h2v3h2.5l-4.5 4.5M12 4h-2v3h-2.5l4.5 4.5;M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"/><animate fill="freeze" attributeName="fill-opacity" begin="0.7s" dur="0.5s" values="0;1"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"/></path><path stroke-dasharray="14" stroke-dashoffset="14" d="M6 19h12"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="14;0"/></path></g></svg></span>
-            </Button>
+            <a href="#">
+              <Button
+                className={
+                  isScrolling
+                    ? "bg-[#b3201d] flex items-center gap-2 justify-center"
+                    : "bg-[#b3201d] text-white flex items-center gap-2 justify-center"
+                }
+                size="sm"
+              >
+                Profile{" "}
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <path
+                        fill="currentColor"
+                        fill-opacity="0"
+                        stroke-dasharray="20"
+                        stroke-dashoffset="20"
+                        d="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"
+                      >
+                        <animate
+                          attributeName="d"
+                          begin="0.5s"
+                          dur="1.5s"
+                          repeatCount="indefinite"
+                          values="M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5;M12 4h2v3h2.5l-4.5 4.5M12 4h-2v3h-2.5l4.5 4.5;M12 4h2v6h2.5l-4.5 4.5M12 4h-2v6h-2.5l4.5 4.5"
+                        />
+                        <animate
+                          fill="freeze"
+                          attributeName="fill-opacity"
+                          begin="0.7s"
+                          dur="0.5s"
+                          values="0;1"
+                        />
+                        <animate
+                          fill="freeze"
+                          attributeName="stroke-dashoffset"
+                          dur="0.4s"
+                          values="20;0"
+                        />
+                      </path>
+                      <path
+                        stroke-dasharray="14"
+                        stroke-dashoffset="14"
+                        d="M6 19h12"
+                      >
+                        <animate
+                          fill="freeze"
+                          attributeName="stroke-dashoffset"
+                          begin="0.5s"
+                          dur="0.2s"
+                          values="14;0"
+                        />
+                      </path>
+                    </g>
+                  </svg>
+                </span>
+              </Button>
             </a>
           </div>
         </div>

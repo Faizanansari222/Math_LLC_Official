@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Button, Typography } from "@material-tailwind/react";
 
-
 function Hero() {
   return (
     <div className="relative min-h-screen w-full">
@@ -11,14 +10,22 @@ function Hero() {
         <div className="container mx-auto mt-32 grid h-full w-full grid-cols-1 place-items-center lg:mt-14 lg:grid-cols-2">
           <div className="col-span-1">
             <Typography variant="h1" color="white" className="mb-4">
-              Your Perfect <br /> Learning App
+              YOUR PERFECT <br /> FINANCIAL ADVISE <br />{" "}
+              <span className="text-white bg-[#b3201d] px-3 rounded-lg">
+                MATH LLC
+              </span>
+              <div className="flex items-center">
+                <div className="h-1 rounded-full mt-3 bg-white w-1/4"></div>
+                <span className="h-2 ml-3 rounded-full mt-3 bg-gray-300 w-2"></span>
+              </div>
             </Typography>
             <Typography
               variant="lead"
               className="mb-7 !text-white md:pr-16 xl:pr-28"
             >
-              Our app is here to empower you on your quest for knowledge,
-              anytime and anywhere.
+              MATH LLC empowers businesses with accurate bookkeeping, reliable
+              financial reporting, and expert tax services for efficient
+              compliance and strategic planning.
             </Typography>
             {/* <Typography className="mb-4" color="white" variant="h6">
               Get the app

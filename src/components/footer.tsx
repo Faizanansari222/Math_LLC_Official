@@ -80,14 +80,17 @@ export function Footer() {
           >
             &copy; {CURRENT_YEAR} Made with{" "}
             <a href="https://github.com/Faizanansari222" target="_blank">
-           Faizan Raza
+              Faizan Raza
             </a>{" "}
-          
             .
           </Typography>
 
           <div className="flex gap-2">
-            <IconButton variant="text" color="white">
+            <IconButton
+              variant="text"
+              color="white"
+              className="my-custom-class"
+            >
               <i className="fa-brands fa-twitter text-2xl not-italic opacity-75"></i>
             </IconButton>
             <IconButton variant="text" color="white">
