@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavItemProps {
   children: React.ReactNode;
@@ -74,25 +75,29 @@ export function Navbar() {
       <div className="container mx-auto flex items-center justify-between">
         <Typography
           as="a"
-          href="https://www.material-tailwind.com"
+          href="/"
           variant="h6"
           color={isScrolling ? "gray" : "white"}
         >
           <div className={``}>
             {isScrolling ? (
-              <Image
-                width={150}
-                height={150}
-                src={require("../assets/Math LLC main logo 1@300x-8.png")}
-                alt={""}
-              />
+              <Link href={"/"}>
+                <Image
+                  width={150}
+                  height={150}
+                  src={require("../assets/Math LLC main logo 1@300x-8.png")}
+                  alt={""}
+                />
+              </Link>
             ) : (
-              <Image
-                width={150}
-                height={150}
-                src={require("../assets/Math-LLC-WHT@300x-8.png")}
-                alt={""}
-              />
+              <Link href={"/"}>
+                <Image
+                  width={150}
+                  height={150}
+                  src={require("../assets/Math-LLC-WHT@300x-8.png")}
+                  alt={""}
+                />
+              </Link>
             )}
           </div>
         </Typography>
@@ -101,29 +106,52 @@ export function Navbar() {
             isScrolling ? "text-[#103c6e]" : "text-white"
           }`}
         >
-          <NavItem href="/">Home</NavItem>
-          <NavItem href="/about">About Us</NavItem>
-          <NavItem href="/services">Services</NavItem>
-          <NavItem href="/contact">Contact Us</NavItem>
+          <NavItem>
+            <Link href="/">Home</Link>
+          </NavItem>
+          <NavItem>
+            {" "}
+            <Link href="/about">About Us</Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/services">Services</Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/contact">Contact Us</Link>
+          </NavItem>
         </ul>
         <div className="hidden gap-2 lg:flex lg:items-center">
-          <IconButton
-            variant="text"
-            className={isScrolling ? "text-[#3ab4e4] hover:bg-white" : "text-white"}
-            size="sm"
+          <a
+            href="https://www.linkedin.com/company/mathllc?trk=public_post_feed-actor-name"
+            target="_blank "
           >
-            <i className="fa-brands fa-linkedin text-base" />
-          </IconButton>
+            <IconButton
+              variant="text"
+              className={
+                isScrolling ? "text-[#3ab4e4] hover:bg-white" : "text-white"
+              }
+              size="sm"
+            >
+              <i className="fa-brands fa-linkedin text-base" />
+            </IconButton>
+          </a>
+          <a href="https://www.facebook.com/mathllcs/" target="_blank">
+            <IconButton
+              variant="text"
+              className={
+                isScrolling ? "text-[#3ab4e4] hover:bg-white" : "text-white"
+              }
+              size="sm"
+            >
+              <i className="fa-brands fa-facebook text-base" />
+            </IconButton>
+          </a>
+
           <IconButton
             variant="text"
-            className={isScrolling ? "text-[#3ab4e4] hover:bg-white" : "text-white"}
-            size="sm"
-          >
-            <i className="fa-brands fa-facebook text-base" />
-          </IconButton>
-          <IconButton
-            variant="text"
-            className={isScrolling ? "text-[#3ab4e4] hover:bg-white "  : "text-white"}
+            className={
+              isScrolling ? "text-[#3ab4e4] hover:bg-white " : "text-white"
+            }
             size="sm"
           >
             <i className="fa-brands fa-instagram text-base" />

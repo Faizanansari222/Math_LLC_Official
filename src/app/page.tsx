@@ -13,13 +13,15 @@ import FooterTwo from "@/components/footerTwo";
 export default function Campaign() {
   return (
     <>
-      <Hero />
-      {/* <VideoIntro /> */}
-      <Feature />
-      <MobileConvenience />
-      <Testimonials />
-      <ClientClouser/>
-      <Faqs />
+      <div className="view">
+        <Hero className={"block"} imgAnimation={"imgAnimation"}/>
+        {/* <VideoIntro /> */}
+        <Feature className={"block"}/>
+        <MobileConvenience />
+        <Testimonials />
+        <ClientClouser />
+        <Faqs />
+      </div>
     </>
   );
 }
