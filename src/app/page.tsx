@@ -13,7 +13,7 @@ import FooterTwo from "@/components/footerTwo";
 export default function Campaign() {
   return (
     <>
-      <div className="view">
+      <div className="view ">
         <Hero className={"block"} imgAnimation={"imgAnimation"}/>
         {/* <VideoIntro /> */}
         <Feature className={"block"}/>

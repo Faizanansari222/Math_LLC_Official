@@ -72,13 +72,8 @@ export function Navbar() {
       onPointerEnterCapture={() => {}}
       onPointerLeaveCapture={() => {}}
     >
-      <div className="container mx-auto flex items-center justify-between">
-        <Typography
-          as="a"
-          href="/"
-          variant="h6"
-          color={isScrolling ? "gray" : "white"}
-        >
+      <div className="container mx-auto  flex items-center justify-between">
+        <Typography as="a" href="/" variant="h6">
           <div className={``}>
             {isScrolling ? (
               <Link href={"/"}>
